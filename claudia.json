@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "dad-jokes-executor",
+    "name": "dad-jokes",
+    "region": "us-east-1"
+  }
+}
