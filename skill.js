@@ -27,10 +27,13 @@ function dadJokes(event, context) {
         .addRepromptText(sampleCommands)
         .keepSession()
         .get();
+    } else if (message.intent.name === 'TellJoke') {
+      return fetchRandom().then(joke => joke);
     } else {
-      if (message.intent.name === 'TellJoke') {
-        return fetchRandom().then(joke => joke);
-      }
+      return new MessageTemplate()
+        .addText(sampleCommands)
+        .keepSession()
+        .get();
     }
   });
 }
